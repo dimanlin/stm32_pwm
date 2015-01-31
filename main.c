@@ -9,9 +9,9 @@ int main() {
   RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 
   TIM2->CCMR1 |= (TIM_CCMR1_OC2M_2 | TIM_CCMR1_OC2M_1);//OC2M = 110 - PWM mode 1
-  TIM2->ARR = 2 - 1;
-  TIM2->CCR2 = 1;
-  TIM2->CCER |= TIM_CCER_CC2E;
+	TIM2->CCER |= TIM_CCER_CC2E;
+  TIM2->ARR = 1000 - 1;
+  TIM2->CCR2 = 500;
   TIM2->CR1 |= TIM_CR1_CEN;
 
   while(1);
