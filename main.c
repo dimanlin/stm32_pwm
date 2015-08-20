@@ -26,6 +26,7 @@ int main() {
 	TIM2->CCR1 = 400;
 	TIM2->DIER |= TIM_DIER_UIE;
 	NVIC_EnableIRQ(TIM2_IRQn);
+	TIM2->CR1 |= TIM_CR1_CMS_1;
   TIM2->CR1 |= TIM_CR1_CEN;
 
   while(1);
